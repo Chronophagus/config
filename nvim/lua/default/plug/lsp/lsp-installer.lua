@@ -8,8 +8,8 @@ end
 -- or if the server is already installed).
 lsp_installer.on_server_ready(function(server)
     local opts = {
-        on_attach = require("default.lsp.handlers").on_attach,
-        capabilities = require("default.lsp.handlers").capabilities,
+        on_attach = require("default.plug.lsp.handlers").on_attach,
+        capabilities = require("default.plug.lsp.handlers").capabilities,
     }
 
     -- (optional) Customize the options passed to the server

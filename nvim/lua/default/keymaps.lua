@@ -30,7 +30,7 @@ keymap("n", "<leader>[", ":bprev!<cr>", opts)
 keymap("n", "<leader>]", ":bnext!<cr>", opts)
 keymap("n", "<leader><leader>", "<C-^>", opts)
 keymap("n", "<leader>w", ":bn<bar>:sp<bar>:bp<bar>:bd<cr>", opts)
-keymap("n", "<leader>q", "bd!", opts)
+keymap("n", "<leader>q", ":bd!", opts)
 
 -- Scrolling
 keymap("n", "J", "<C-d>", opts)

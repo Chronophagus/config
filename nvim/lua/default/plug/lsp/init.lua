@@ -5,5 +5,5 @@ if not status_ok then
 end
 
 vim.cmd "let g:rustfmt_autosave = 1"
-require("default.lsp.lsp-installer")
-require("default.lsp.handlers").setup()
+require("default.plug.lsp.lsp-installer")
+require("default.plug.lsp.handlers").setup()
