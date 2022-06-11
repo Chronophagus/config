@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
     "modules-center": [],
-    "modules-right": ["battery", "battery#bat2", "pulseaudio", "cpu", "temperature", "backlight", "keyboard-state", "sway/language", "clock", "tray"],
+    "modules-right": ["network", "battery", "battery#bat2", "pulseaudio", "cpu", "temperature", "backlight", "keyboard-state", "sway/language", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -23,6 +23,17 @@
     //         "default": ""
     //     }
     // },
+    "network": {
+        "interface": "wlan0",
+        "format": "{ifname}",
+        "format-wifi": "{essid}:{signalStrength}% ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
