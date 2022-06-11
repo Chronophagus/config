@@ -17,14 +17,8 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 ls.config.set_config {
     history = true,
-    -- update_events = "TextChanged,TextChangedI",
     enable_autosnippets = true,
 }
-
--- ls.add_snippets("all", {
---         ls.parser.parse_snippet("expand", "//All Expanded line"),
---     }, { key = "all" }
--- )
 
 local type_filter = function(index)
     return f(function(arg)

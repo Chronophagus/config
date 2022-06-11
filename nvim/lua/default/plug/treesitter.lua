@@ -15,5 +15,3 @@ configs.setup {
     },
     indent = { enable = true }
 }
-
-

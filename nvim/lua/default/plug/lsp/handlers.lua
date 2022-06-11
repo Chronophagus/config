@@ -69,7 +69,7 @@ local function lsp_keymaps(bufnr)
       keymap(bufnr, "n", "gI", "<cmd>Telescope lsp_implementations<CR>", opts)
       keymap(bufnr, "n", "g&", "<cmd>Telescope lsp_references<CR>", opts)
       keymap(bufnr, "n", "g<Tab>", "<cmd>Telescope lsp_code_actions<CR>", opts)
-  else 
+  else
       keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
       keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
       keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)

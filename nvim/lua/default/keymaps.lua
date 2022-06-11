@@ -58,8 +58,16 @@ keymap("x", "J", ":m '>+1<cr>gv=gv", opts)
 keymap("x", "K", ":m '<-2<cr>gv=gv", opts)
 
 -- Highlight fix
-vim.cmd [[
-  autocmd CursorMoved * set nohlsearch
-]]
 keymap("n", "n", "n:set hlsearch<cr>", opts)
 keymap("n", "N", "N:set hlsearch<cr>", opts)
+
+local fix_group = vim.api.nvim_create_augroup("small_fixes", {
+    clear = true,
+})
+
+vim.api.nvim_create_autocmd({"CursorMoved", "CursorMovedI"}, {
+    group = fix_group,
+    pattern = "*",
+    command = "set nohlsearch",
+    desc = "Disable highlight on cursor move",
+})

@@ -28,7 +28,6 @@ telescope.setup {
 
     defaults = {
         mappings = custom_mappings,
-    }
+    },
 }
 
-telescope.load_extension("fzf")

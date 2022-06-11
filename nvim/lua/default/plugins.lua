@@ -6,20 +6,23 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
-
 -- Verify that packer exists
 local status_ok, packer = pcall(require, "packer")
 
 if not status_ok then
   return
 end
+
+local packer_group = vim.api.nvim_create_augroup("PackerConfig", {
+    clear = true,
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+    group   = packer_group,
+    pattern = "plugins.lua",
+    command = "source <afile> | PackerSync",
+    desc    = "Update/Install plugins on save"
+})
 
 -- Configure packer
 packer.init {
@@ -56,10 +59,6 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
-  use {
-      "rafamadriz/friendly-snippets",
-      disable = true
-  }
 
   -- Code highlighting
   use {
