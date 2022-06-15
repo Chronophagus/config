@@ -13,3 +13,6 @@ require "default.plug.telescope"
 require "default.plug.treesitter"
 require "default.plug.filetree"
 require "default.plug.lualine"
+
+-- Extra modules
+require "gui.neovide"

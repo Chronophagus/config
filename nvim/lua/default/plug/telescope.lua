@@ -14,12 +14,14 @@ keymap('n', "<C-p>", ":Telescope find_files<cr>", opts)
 keymap('n', "<leader>h", ":Telescope oldfiles<cr>", opts)
 keymap('n', "<leader>b", ":Telescope buffers<cr>", opts)
 keymap('n', "<leader>f", ":Telescope live_grep<cr>", opts)
+keymap('n', "<leader>l", ":Telescope quickfix<cr>", opts)
 
 -- Telescope window mappings
 local custom_mappings = {
     i = {
         ["<C-j>"] = require("telescope.actions").move_selection_next,
         ["<C-k>"] = require("telescope.actions").move_selection_previous,
+        ["<C-l>"] = require("telescope.actions").send_to_qflist,
     }
 }
 

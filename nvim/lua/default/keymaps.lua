@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Leader key
@@ -30,7 +29,7 @@ keymap("n", "<leader>[", ":bprev!<cr>", opts)
 keymap("n", "<leader>]", ":bnext!<cr>", opts)
 keymap("n", "<leader><leader>", "<C-^>", opts)
 keymap("n", "<leader>w", ":bn<bar>:sp<bar>:bp<bar>:bd<cr>", opts)
-keymap("n", "<leader>q", ":bd!", opts)
+keymap("n", "<leader>q", ":bd!<cr>", opts)
 
 -- Scrolling
 keymap("n", "J", "<C-d>", opts)
