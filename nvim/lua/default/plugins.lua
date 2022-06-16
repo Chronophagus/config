@@ -64,7 +64,6 @@ packer.startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    disable = true,
   }
   use 'rust-lang/rust.vim'
   use 'ziglang/zig.vim'
