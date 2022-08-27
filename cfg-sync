@@ -11,7 +11,8 @@ def process_file(paths_file):
                 continue
 
             source,dest = line.split()
-            pairs.append((source, dest))
+            assert source.startswith("./"), "source path must start with ./"
+            pairs.append((source, os.path.expanduser(dest)))
 
     return pairs
 
